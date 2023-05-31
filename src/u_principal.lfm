@@ -1,0 +1,27 @@
+object f_principal: Tf_principal
+  Left = 329
+  Height = 600
+  Top = 53
+  Width = 800
+  Caption = 'f_principal'
+  Menu = menu_principal
+  LCLVersion = '2.2.6.0'
+  object menu_principal: TMainMenu
+    Left = 752
+    Top = 552
+    object o_arquivo: TMenuItem
+      Caption = 'Arquivo'
+      object o_arquivo_novo: TMenuItem
+        Caption = 'Novo Projeto...'
+        OnClick = o_arquivo_novoClick
+      end
+      object o_arquivo_sep1: TMenuItem
+        Caption = '-'
+      end
+      object o_arquivo_sair: TMenuItem
+        Caption = 'Sair'
+        OnClick = o_arquivo_sairClick
+      end
+    end
+  end
+end

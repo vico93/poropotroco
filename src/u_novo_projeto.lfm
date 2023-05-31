@@ -1,0 +1,81 @@
+object f_novo_projeto: Tf_novo_projeto
+  Left = 256
+  Height = 166
+  Top = 145
+  Width = 405
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Novo Projeto'
+  ClientHeight = 166
+  ClientWidth = 405
+  OnCreate = FormCreate
+  LCLVersion = '2.2.6.0'
+  object nome_pasta: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 32
+    Width = 80
+    EditLabel.Height = 15
+    EditLabel.Width = 80
+    EditLabel.Caption = 'Pasta:'
+    EditLabel.ParentColor = False
+    TabOrder = 0
+    Text = 'Projeto1'
+    OnKeyPress = nome_pastaKeyPress
+  end
+  object titulo: TLabeledEdit
+    Left = 128
+    Height = 23
+    Top = 32
+    Width = 256
+    EditLabel.Height = 15
+    EditLabel.Width = 256
+    EditLabel.Caption = 'Título do Jogo:'
+    EditLabel.ParentColor = False
+    TabOrder = 1
+    Text = 'Projeto1'
+  end
+  object caminho: TLabeledEdit
+    Left = 16
+    Height = 23
+    Top = 88
+    Width = 336
+    EditLabel.Height = 15
+    EditLabel.Width = 336
+    EditLabel.Caption = 'Caminho:'
+    EditLabel.ParentColor = False
+    TabOrder = 2
+  end
+  object btn_explorar: TButton
+    Left = 360
+    Height = 25
+    Top = 88
+    Width = 24
+    Caption = '...'
+    OnClick = btn_explorarClick
+    TabOrder = 3
+  end
+  object btn_cancelar: TButton
+    Left = 309
+    Height = 25
+    Top = 128
+    Width = 75
+    Caption = 'Cancelar'
+    OnClick = btn_cancelarClick
+    TabOrder = 4
+  end
+  object btn_ok: TButton
+    Left = 224
+    Height = 25
+    Top = 128
+    Width = 75
+    Caption = 'OK'
+    TabOrder = 5
+  end
+  object dlg_pasta_projeto: TSelectDirectoryDialog
+    FileName = 'D:\Projetos\Github\vico93\poropotroco\src'
+    InitialDir = 'D:\Projetos\Github\vico93\poropotroco\'
+    Left = 40
+    Top = 120
+  end
+end
