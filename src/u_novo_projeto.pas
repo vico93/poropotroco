@@ -23,6 +23,7 @@ type
     procedure btn_cancelarClick(Sender: TObject);
     procedure btn_explorarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure nome_pastaChange(Sender: TObject);
   private
 
   public
@@ -31,6 +32,7 @@ type
 
 var
   f_novo_projeto: Tf_novo_projeto;
+  pasta_selecionada: string;
 
 implementation
 
@@ -46,14 +48,20 @@ end;
 procedure Tf_novo_projeto.btn_explorarClick(Sender: TObject);
 begin
   if dlg_pasta_projeto.Execute then
-    caminho.Text := AppendPathDelim(dlg_pasta_projeto.FileName) + nome_pasta.Text;
+    pasta_selecionada := dlg_pasta_projeto.FileName;
+    caminho.Text := AppendPathDelim(pasta_selecionada) + nome_pasta.Text;
 end;
 
 procedure Tf_novo_projeto.FormCreate(Sender: TObject);
 begin
-  caminho.Text:= AppendPathDelim(u_comum.get_default_dir()) + nome_pasta.Text;
-  dlg_pasta_projeto.InitialDir:=u_comum.get_default_dir();
-  dlg_pasta_projeto.FileName:=u_comum.get_default_dir();
+  pasta_selecionada := u_comum.get_default_dir();
+  caminho.Text:= AppendPathDelim(pasta_selecionada) + nome_pasta.Text;
+  dlg_pasta_projeto.InitialDir:=pasta_selecionada;
+end;
+
+procedure Tf_novo_projeto.nome_pastaChange(Sender: TObject);
+begin
+  caminho.Text:= AppendPathDelim(pasta_selecionada) + nome_pasta.Text;
 end;
 
 end.

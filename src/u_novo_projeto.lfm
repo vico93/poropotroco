@@ -1,7 +1,7 @@
 object f_novo_projeto: Tf_novo_projeto
-  Left = 256
+  Left = 413
   Height = 166
-  Top = 145
+  Top = 164
   Width = 405
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -22,6 +22,7 @@ object f_novo_projeto: Tf_novo_projeto
     EditLabel.ParentColor = False
     TabOrder = 0
     Text = 'Projeto1'
+    OnChange = nome_pastaChange
   end
   object titulo: TLabeledEdit
     Left = 128
