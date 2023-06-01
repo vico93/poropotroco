@@ -5,7 +5,8 @@ unit u_novo_projeto;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, LazFileUtils,
+  u_comum;
 
 type
 
@@ -22,7 +23,6 @@ type
     procedure btn_cancelarClick(Sender: TObject);
     procedure btn_explorarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure nome_pastaKeyPress(Sender: TObject; var Key: char);
   private
 
   public
@@ -46,19 +46,14 @@ end;
 procedure Tf_novo_projeto.btn_explorarClick(Sender: TObject);
 begin
   if dlg_pasta_projeto.Execute then
-    caminho.Text := dlg_pasta_projeto.FileName + '\\' + nome_pasta.Text;
+    caminho.Text := AppendPathDelim(dlg_pasta_projeto.FileName) + nome_pasta.Text;
 end;
 
 procedure Tf_novo_projeto.FormCreate(Sender: TObject);
 begin
-  caminho.Text:=GetUserDir() + nome_pasta.Text;
-  dlg_pasta_projeto.InitialDir:=GetUserDir();
-  dlg_pasta_projeto.FileName:=GetUserDir();
-end;
-
-procedure Tf_novo_projeto.nome_pastaKeyPress(Sender: TObject; var Key: char);
-begin
-
+  caminho.Text:= AppendPathDelim(u_comum.get_default_dir()) + nome_pasta.Text;
+  dlg_pasta_projeto.InitialDir:=u_comum.get_default_dir();
+  dlg_pasta_projeto.FileName:=u_comum.get_default_dir();
 end;
 
 end.
