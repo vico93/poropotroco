@@ -5,6 +5,7 @@ object f_principal: Tf_principal
   Width = 800
   Caption = 'f_principal'
   Menu = menu_principal
+  Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object menu_principal: TMainMenu
     Left = 752

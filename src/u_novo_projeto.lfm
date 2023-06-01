@@ -9,6 +9,7 @@ object f_novo_projeto: Tf_novo_projeto
   ClientHeight = 166
   ClientWidth = 405
   OnCreate = FormCreate
+  Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object nome_pasta: TLabeledEdit
     Left = 16
@@ -21,7 +22,6 @@ object f_novo_projeto: Tf_novo_projeto
     EditLabel.ParentColor = False
     TabOrder = 0
     Text = 'Projeto1'
-    OnKeyPress = nome_pastaKeyPress
   end
   object titulo: TLabeledEdit
     Left = 128
@@ -47,9 +47,9 @@ object f_novo_projeto: Tf_novo_projeto
     TabOrder = 2
   end
   object btn_explorar: TButton
-    Left = 360
+    Left = 361
     Height = 25
-    Top = 88
+    Top = 86
     Width = 24
     Caption = '...'
     OnClick = btn_explorarClick
